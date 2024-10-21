@@ -104,6 +104,7 @@ def get_password():
     return input('Enter Password:-')
 
 def main():
+    instructions()
     c = 3
     username = get_username()
     while c>0:
@@ -118,6 +119,30 @@ def main():
         else:
             c-=1
             print(f'Password is not valid. {c} attempts left')
+
+
+
+def instructions():
+    print('PASSWORD VALIDATOR')
+    print("1: PASSWORD LENGTH SHOULD BE OF MINIMUM 12 CHARACTER ")
+    print("2: PASSWORD LENGTH SHOULD NOT BE GREATER THAN 20 CHARACTER")
+    print("3: PASSWORD MUST CONSIST OF UPPER-CASE CHARACTER [A-Z] ")
+    print("4: PASSWORD MUST CONSIST OF LOWER-CASE CHARACTER [a-z]")
+    print("5: PASSWORD MUST CONSIST OF NUMBER [0-9] ")
+    print("6: PASSWORD MUST CONSIST OF SPECIAL\
+CHARACTER - !, @, #, $, %, ^, &, *, (, ), _, -, ~ ")
+    print("7: PASSWORD SHOULD START WITH EITHER ANY SPECIAL\
+CHARACTER OR WITH 2 DIGIT'S NUMBER")
+    print("8: PASSWORD SHOULD CONTAIN ATLEAST\
+3 UPPER-CASE CHARACTER AND 3 LOWER-CASE CHARACTER")
+    print("9: PASSWORD SHOULD CONTAIN ATLEAST\
+3 SPECIAL CHARACTER")
+    print("10: PASSWORD SHOULD NOT CONTAIN 5 SAME\
+CHARACTER\ OR NUMBER CONSECUTIVELY ")
+    print("11: PASSWORD SHOULD NOT HAVE USERNAME\
+INTO IT AT ANY POSITION")
+    print("12: PASSWORD SHOULD NOT CONTAIN 3 \
+SAME SPECIAL CHARACTER'S CONSECUTIVELY")
 
 if __name__ == '__main__':
     main()
