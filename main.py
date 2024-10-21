@@ -85,8 +85,7 @@ def valid_characters_numbers(password):
     return True
 
 @helper("Password can't consist UserName at all")
-def not_a_username(password):
-    username = get_username()
+def not_a_username(password,username):
     u1 =  username.split()
     p1 = ''.join(password.split()).lower()
 
@@ -95,10 +94,8 @@ def not_a_username(password):
 
     return True
 
-def is_valid_password(password):
-    return within_range(password) and contains_uppercase(password) and contains_lowercase(password) and contains_digit(password) and contains_specialchar(password) and valid_specialchar(password) and start_with(password) and valid_characters_numbers(password) and not_a_username(password) and password not in password_list
-
-
+def is_valid_password(password,username):
+    return within_range(password) and contains_uppercase(password) and contains_lowercase(password) and contains_digit(password) and contains_specialchar(password) and valid_specialchar(password) and start_with(password) and valid_characters_numbers(password) and not_a_username(password,username) and password not in password_list
 
 def get_username():
     return input('Enter Username:-')
@@ -108,13 +105,14 @@ def get_password():
 
 def main():
     c = 3
+    username = get_username()
     while c>0:
         password = get_password()
         password =  password.strip()# strip remove -> characters from left or right side, if no argument is paased - by default remove whitespace(if present), and returns new string
     
         print(len(password))
 
-        if is_valid_password(password):
+        if is_valid_password(password,username):
             print('Password is valid')
             break
         else:
